@@ -9,6 +9,7 @@
 $rec = $this->recipe;
 $ing = $this->ingredients;
 $met = $this->methods;
+$js = $this->java;
 echo "<div style=\"width:250px;height:400px;overflow:auto;float:left;\">";
 foreach($rec as $step){
 	echo "<div style=\"float:left;width:230px;height:100px\">$step</div>";
@@ -29,10 +30,10 @@ echo "<script>\n";
 echo "function clickMet(){var menu = document.getElementById(\"mic\"); menu.removeAttribute(\"onclick\"); var select = document.createElement(\"select\");"
 
 foreach($met as $step){
-    echo "var opt$step = document.createElement(\"option\"); opt$step.setAttrute(\"value\",\"$step\"); var wr$step = document.createTextNode(\"$step\"); opt$step.appendChild(\"wr$step\") select.appendChild(\"op$step\");";
+    echo "var opt$step = document.createElement(\"option\"); opt$step.setAttribute(\"value\",\"$step\"); var wr$step = document.createTextNode(\"$step\"); opt$step.appendChild(wr$step); select.appendChild(op$step);";
  }
 
-echo "input = document.createElement(\"input\"); input.setAttribute(\"type\",\"submit\"); input.setAttribrute(\"onclick\",\"sub()\");};";
+echo "input = document.createElement(\"input\"); input.setAttribute(\"type\",\"submit\"); input.setAttribrute(\"onclick\",\"sub()\"); menu.appendChild(select); menu.appendChild(input);};";
 
 echo "</script>";
 	
